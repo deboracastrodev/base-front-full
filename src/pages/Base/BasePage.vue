@@ -1,8 +1,8 @@
 <template>
   <div>
-    <SideNav />
+    <side-nav />
     <main class="v-body" :class="isOpened ? 'v-body--expanded' : null">
-      <TopNav size="medium" />
+      <top-nav size="medium" />
       <div class="v-main-content">
         <slot>
           <router-view />
