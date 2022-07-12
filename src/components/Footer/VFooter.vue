@@ -4,8 +4,8 @@
       Vert Capital {{ new Date().getFullYear() }} © Todos os direitos reservados
     </div>
     <div>
-      <a href="#" class="h6">Sobre a Vert</a> |
-      <a href="#" class="h6">Fale conosco</a>
+      <a href="#">Sobre a Vert</a> |
+      <a href="#">Fale conosco</a>
     </div>
   </div>
 </template>

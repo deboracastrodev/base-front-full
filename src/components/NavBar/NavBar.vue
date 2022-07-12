@@ -1,12 +1,9 @@
 <template>
-  <div
-    class="d-none d-md-block sidebar collapse v-nav-bar"
-    :class="[positionFixed, sidebarStateClass]"
-  >
+  <div class="sidebar collapse v-nav-bar" :class="[positionFixed, sidebarStateClass]">
     <div class="sidebar-sticky">
       <ul class="v-nav-bar__list">
         <div class="v-nav-bar__logo">
-          <div class="d-flex justify-content-center align-items-center h-100">
+          <div>
             <a href="/" class="d-block">
               <img src="@/assets/images/logo/vert-ops.svg" v-if="isOpened" />
               <img src="@/assets/images/logo/vert-ops_thumb.png" v-else />

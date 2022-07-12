@@ -1,6 +1,6 @@
 <template>
   <li class="v-nav-bar__label-group">
-    <div class="v-nav-bar__label-group pl-3" :class="!isOpened() ? 'hide__label-group' : null">
+    <div class="v-nav-bar__label-group" :class="!isOpened() ? 'hide__label-group' : null">
       <span class="v-nav-bar__label-group__text">{{ title }}</span>
     </div>
   </li>

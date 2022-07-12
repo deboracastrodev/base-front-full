@@ -1,5 +1,5 @@
 <template>
-  <router-link class="d-flex align-items-center router-link">
+  <router-link class="router-link">
     <span class="router-link__icon">
       <slot name="icon"></slot>
     </span>
@@ -36,7 +36,7 @@ export default {
 
   &:hover {
     text-decoration: none;
-    background-color: $light-green-color !important;
+    background-color: $light-green-color  !important;
   }
 
   * {
