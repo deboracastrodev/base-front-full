@@ -1,0 +1,51 @@
+/* Element Chalk Variables */
+@use 'sass:math';
+@use 'sass:map';
+
+@use '../base/variables' as variables;
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': variables.$brand-color-primary-pure
+    ),
+    'success': (
+      'base': variables.$feedback-color-success-pure
+    ),
+    'warning': (
+      'base': variables.$feedback-color-wargning-pure
+    ),
+    'danger': (
+      'base': variables.$feedback-color-helper-pure
+    ),
+    'error': (
+      'base': variables.$feedback-color-helper-pure
+    ),
+    'info': (
+      'base': variables.$neutral-color-low-medium
+    )
+  ),
+  $table: (
+    'header-bg-color': variables.$brand-color-primary-light,
+    'row-hover-bg-color': rgba(variables.$brand-color-primary-light, 0.4)
+  ),
+  $text-color: (
+    'secondary': variables.$brand-color-primary-pure
+  ),
+  $fill-color: (
+    'light': variables.$neutral-color-hight-medium
+  ),
+  $dialog: (
+    'margin-top': 0
+  ),
+  $button-padding-vertical: (
+    'default': 13px
+  ),
+  $button-padding-horizontal: (
+    'large': 20px,
+    'default': 24px,
+    'small': 15px
+  )
+);
+
+@use 'element-plus/theme-chalk/src/index.scss' as *;
