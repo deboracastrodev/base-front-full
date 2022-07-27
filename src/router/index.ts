@@ -14,12 +14,12 @@ const router = createRouter({
           component: () => import('../pages/Home/Home.vue')
         },
         {
-          path: '',
+          path: '/link2',
           name: 'Link2',
           component: () => import('../pages/Home/Home.vue')
         },
         {
-          path: '',
+          path: '/link3',
           name: 'Link3',
           component: () => import('../pages/Home/Home.vue')
         }

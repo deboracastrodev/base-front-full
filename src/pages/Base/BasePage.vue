@@ -1,12 +1,10 @@
 <template>
   <div class="v-base-page">
     <el-container>
-      <el-aside>
-        <side-nav />
-      </el-aside>
+      <side-nav :isCollapse="isCollapse"></side-nav>
       <el-container>
         <el-header>
-          <top-nav />
+          <top-nav v-model="isCollapse"></top-nav>
         </el-header>
         <el-main>
           <slot>
@@ -37,16 +35,16 @@ export default defineComponent({
   },
   setup() {
     const store = useStore();
-    // const isOpened = ref(() => store.getters['utils/getIsOpened']);
-    const isOpened = ref(true);
+    const isCollapse = ref(true);
 
     return {
       store,
-      isOpened
+      isCollapse
     };
   }
 });
 </script>
+
 <style lang="scss">
 .v-base-page {
   margin: 0 0 0 0;

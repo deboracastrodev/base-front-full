@@ -22,22 +22,22 @@ export default {
     @content;
   }
 }
-
 .router-link {
   border-left: 4px solid $neutral-color-hight-pure;
   transition: all 0.3s ease;
   width: calc(13rem - 4px);
   height: 46px;
   display: flex;
-
-  @include respond-to('medium') {
-    padding-left: 10px;
-    padding-right: 1rem;
-  }
-
-  &:hover {
+  align-items: center;
     text-decoration: none;
-    background-color: $light-green-color  !important;
+  @include respond-to('medium') {
+      padding-left: 10px;
+      padding-right: 1rem;
+    }
+  
+    &:hover {
+      text-decoration: none;
+      background-color: $light-green-color  !important;
   }
 
   * {
