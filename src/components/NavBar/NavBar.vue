@@ -5,8 +5,8 @@
         <div class="v-nav-bar__logo">
           <div>
             <a href="/" class="d-block">
-              <img src="@/assets/images/logo/vert-ops.svg" v-if="isOpened" />
-              <img src="@/assets/images/logo/vert-ops_thumb.png" v-else />
+              <img src="@/assets/images/logo.svg" v-if="isOpened" />
+              <img src="@/assets/images/logo.png" v-else />
             </a>
           </div>
         </div>
@@ -22,10 +22,6 @@ import { useStore } from 'vuex';
 
 export default defineComponent({
   name: 'NavBar',
-
-  props: {
-    active: { type: Boolean, default: false }
-  },
 
   setup() {
     const store = useStore();

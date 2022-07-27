@@ -17,6 +17,7 @@ export default defineConfig({
       scss: {
         additionalData: `
               @import "@/assets/style/base/_variables.scss";
+              @import "@/assets/style/element/index.scss";
               @import "@/assets/style/main.scss";
             `
       }

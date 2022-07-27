@@ -26,8 +26,9 @@ export default {
 .router-link {
   border-left: 4px solid $neutral-color-hight-pure;
   transition: all 0.3s ease;
+  width: calc(13rem - 4px);
   height: 46px;
-  padding: 1rem;
+  display: flex;
 
   @include respond-to('medium') {
     padding-left: 10px;

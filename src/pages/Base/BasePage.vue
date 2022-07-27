@@ -1,16 +1,24 @@
 <template>
-  <div>
-    <side-nav />
-    <main class="v-body" :class="isOpened ? 'v-body--expanded' : null">
-      <top-nav size="medium" />
-      <div class="v-main-content">
-        <slot>
-          <router-view />
-        </slot>
-      </div>
-    </main>
+  <div class="v-base-page">
+    <el-container>
+      <el-aside>
+        <side-nav />
+      </el-aside>
+      <el-container>
+        <el-header>
+          <top-nav />
+        </el-header>
+        <el-main>
+          <slot>
+            <router-view />
+          </slot>
+        </el-main>
+        <el-footer>
+          <v-footer />
+        </el-footer>
+      </el-container>
+    </el-container>
   </div>
-  <v-footer />
 </template>
 
 <script lang="ts">
@@ -22,7 +30,11 @@ import { useStore } from 'vuex';
 
 export default defineComponent({
   name: 'BasePage',
-  components: { TopNav, SideNav, VFooter },
+  components: {
+    TopNav,
+    SideNav,
+    VFooter
+  },
   setup() {
     const store = useStore();
     // const isOpened = ref(() => store.getters['utils/getIsOpened']);
@@ -36,17 +48,13 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-.v-body {
-  margin-left: 50px;
-
-  &--expanded {
-    margin-left: 13.5rem;
-  }
+.v-base-page {
+  margin: 0 0 0 0;
 }
-
-.v-main-content {
-  position: relative;
-  margin-top: 60px;
-  padding: 2rem;
+.el-container {
+  margin: 0 0 0 0;
+}
+.el-aside {
+  width: 13rem;
 }
 </style>
