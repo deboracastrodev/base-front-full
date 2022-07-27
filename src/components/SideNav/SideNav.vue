@@ -111,18 +111,18 @@ export default defineComponent({
   height: 1.5rem;
   width: auto;
   transition: all 0.3s ease;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .image-logo {
-    vertical-align: middle;
-    height: 1.5rem;
-    width: auto;
-    max-width: 13rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.image-logo {
+  vertical-align: middle;
+  height: 1.5rem;
+  width: auto;
+  max-width: 13rem;
 }
 
 .sidebar-menu {

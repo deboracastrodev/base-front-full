@@ -1,6 +1,12 @@
 <template>
   <div class="v-tob-bar">
-    <SvgIcon @click="openSidebar" class="menuSandwich" type="mdi" :path="mdiMenu" :size="22"></SvgIcon>
+    <SvgIcon
+      @click="openSidebar"
+      class="menuSandwich"
+      type="mdi"
+      :path="mdiMenu"
+      :size="22"
+    ></SvgIcon>
   </div>
 </template>
 

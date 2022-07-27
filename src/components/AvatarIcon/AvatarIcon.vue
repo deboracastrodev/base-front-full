@@ -52,9 +52,7 @@ export default defineComponent({
 
   @if $size <=35 {
     border: 4px solid $neutral-color-hight-light;
-  }
-
-  @else {
+  } @else {
     border: 6px solid $neutral-color-hight-light;
   }
 
@@ -79,9 +77,7 @@ export default defineComponent({
 
       @if $size <=38 {
         font-size: 0.75rem;
-      }
-
-      @else if $size >50 {
+      } @else if $size >50 {
         font-size: 1.375rem;
       }
     }
@@ -100,7 +96,7 @@ export default defineComponent({
     transition-duration: 300ms;
   }
 
-  &:hover>.v-tooltip {
+  &:hover > .v-tooltip {
     display: inline-block;
   }
 
