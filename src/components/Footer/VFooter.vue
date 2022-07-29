@@ -1,32 +1,14 @@
 <template>
   <div class="v-footer">
-    <div class="v-footer__copyright" :class="isOpened ? 'v-footer__copyright--expanded' : null">
+    <div class="v-footer__copyright">
       Vert Capital {{ new Date().getFullYear() }} © Todos os direitos reservados
     </div>
-    <div>
+    <div class="v-footer__links">
       <a href="#">Sobre a Vert</a> |
       <a href="#">Fale conosco</a>
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { useStore } from 'vuex';
-
-export default defineComponent({
-  name: 'VFooter',
-  setup() {
-    const store = useStore();
-    // const isOpened = ref(() => store.getters['utils/getIsOpened']);
-    const isOpened = ref(true);
-
-    return {
-      isOpened
-    };
-  }
-});
-</script>
 
 <style lang="scss">
 .v-footer {
@@ -43,12 +25,21 @@ export default defineComponent({
     color: $neutral-color-low-medium;
   }
 
+  a {
+    color: $neutral-color-low-medium;
+    text-decoration: none;
+
+    &:hover {
+      color: #00747a;
+    }
+  }
+
+  &__links {
+    margin-right: 3rem;
+  }
+
   &__copyright {
     margin-left: 3rem;
-
-    &--expanded {
-      margin-left: 13.13rem;
-    }
   }
 }
 </style>

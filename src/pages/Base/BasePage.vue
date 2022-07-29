@@ -1,5 +1,5 @@
 <template>
-  <div class="v-base-page">
+  <div class="v-basepage">
     <el-container>
       <side-nav :isCollapse="isCollapse"></side-nav>
       <el-container>
@@ -46,7 +46,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.v-base-page {
+.v-basepage {
   margin: 0 0 0 0;
 }
 .el-container {
@@ -54,5 +54,14 @@ export default defineComponent({
 }
 .el-aside {
   width: 13rem;
+}
+.el-footer {
+  padding: 0 0 0 0 !important;
+  --el-footer-padding: 0 0 0 0 !important;
+  --el-footer-height: 3.5rem;
+}
+
+.el-header {
+  padding: 0 0 0 0;
 }
 </style>

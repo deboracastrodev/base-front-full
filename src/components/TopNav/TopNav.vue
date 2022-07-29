@@ -1,12 +1,6 @@
 <template>
-  <div class="v-tob-bar">
-    <SvgIcon
-      @click="openSidebar"
-      class="menuSandwich"
-      type="mdi"
-      :path="mdiMenu"
-      :size="22"
-    ></SvgIcon>
+  <div class="v-tobbar">
+    <SvgIcon @click="openSidebar" class="menuSandwich" type="mdi" :path="mdiMenu" :size="22"></SvgIcon>
   </div>
 </template>
 
@@ -27,7 +21,6 @@ export default defineComponent({
 
     function openSidebar(): any {
       isCollapse.value = !isCollapse.value;
-      console.log(isCollapse.value);
       emit('update:modelValue', isCollapse.value);
     }
 
@@ -59,3 +52,13 @@ export default defineComponent({
   }
 });
 </script>
+<style lang="scss">
+.v-tobbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0 1px 3px #0000001a;
+  padding: 0 1rem;
+}
+</style>
