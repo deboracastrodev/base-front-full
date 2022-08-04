@@ -49,12 +49,15 @@ export default defineComponent({
 .v-basepage {
   margin: 0 0 0 0;
 }
+
 .el-container {
   margin: 0 0 0 0;
 }
+
 .el-aside {
   width: 13rem;
 }
+
 .el-footer {
   padding: 0 0 0 0 !important;
   --el-footer-padding: 0 0 0 0 !important;
