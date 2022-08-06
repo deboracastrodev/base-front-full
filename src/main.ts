@@ -4,6 +4,7 @@ import ElementPlus from 'element-plus';
 import SvgIcon from '@jamescoyle/vue-icon';
 import router from './router';
 import locale from 'element-plus/lib/locale/lang/pt-br';
+import '@vert-frame-core/design-system/dist/style.css';
 
 const app = createApp(App);
 

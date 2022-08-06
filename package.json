@@ -14,7 +14,7 @@
   "dependencies": {
     "@jamescoyle/vue-icon": "^0.1.2",
     "@mdi/js": "^6.9.96",
-    "@vert-frame-core/design-system": "^0.0.3",
+    "@vert-frame-core/design-system": "^0.0.5",
     "element-plus": "^2.2.9",
     "vue": "^3.2.37",
     "vue-axios": "^3.4.1",

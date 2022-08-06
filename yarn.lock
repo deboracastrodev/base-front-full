@@ -510,10 +510,10 @@
     "@typescript-eslint/types" "5.30.6"
     eslint-visitor-keys "^3.3.0"
 
-"@vert-frame-core/design-system@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@vert-frame-core/design-system/-/design-system-0.0.3.tgz#5c75a7c5deb7055337ee30e1b56651d13d743fc9"
-  integrity sha512-Q6rcQiKKi4enrMXalXAD5ca2voXrE3meGaPNNhnpWtvnyBb+1dZwqgyuGBJ8hN+gbpUuCO2nPr7EmpsbPogEQg==
+"@vert-frame-core/design-system@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@vert-frame-core/design-system/-/design-system-0.0.5.tgz#3278c86e7ceecc0191dc1c5294bcd710d23ccba8"
+  integrity sha512-PxfrftJHvhyL9LWB8aNoLMNVyS+63vBE+o9PsUTksnk07PziUqWzK43myhzEM7LS4DbcZc/MymylhlgolKBHDw==
   dependencies:
     vue-demi "^0.12.1"
 
