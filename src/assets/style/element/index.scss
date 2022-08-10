@@ -2,7 +2,7 @@
 @use 'sass:math';
 @use 'sass:map';
 
-@use '../base/variables' as variables;
+@use '../variables/' as variables;
 
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: (
@@ -13,7 +13,7 @@
       'base': variables.$feedback-color-success-pure
     ),
     'warning': (
-      'base': variables.$feedback-color-wargning-pure
+      'base': variables.$feedback-color-warning-pure
     ),
     'danger': (
       'base': variables.$feedback-color-helper-pure

@@ -1,11 +1,4 @@
-@use './variables' as variables;
-
-%transition-link {
-  transition: ease-in-out 0.25s opacity;
-  &:hover {
-    opacity: 0.5;
-  }
-}
+@use '../variables/' as variables;
 
 .cursor-pointer {
   cursor: pointer;
@@ -108,11 +101,11 @@ Ex. fs-1-25 = font-size: 1.25rem;
 }
 
 .yellow-color {
-  color: variables.$feedback-color-wargning-pure;
+  color: variables.$feedback-color-warning-pure;
 }
 
 .dark-yellow-color {
-  color: variables.$feedback-color-wargning-medium;
+  color: variables.$feedback-color-warning-medium;
 }
 
 .fill-red-color {
