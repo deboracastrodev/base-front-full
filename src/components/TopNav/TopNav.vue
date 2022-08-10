@@ -1,6 +1,12 @@
 <template>
   <div class="v-tobbar">
-    <SvgIcon @click="openSidebar" class="menuSandwich" type="mdi" :path="mdiMenu" :size="22"></SvgIcon>
+    <SvgIcon
+      @click="openSidebar"
+      class="menuSandwich"
+      type="mdi"
+      :path="mdiMenu"
+      :size="22"
+    ></SvgIcon>
   </div>
 </template>
 
@@ -54,11 +60,17 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .v-tobbar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  z-index: 600;
   height: 60px;
-  box-shadow: 0 1px 3px #0000001a;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
   padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  box-sizing: border-box;
 }
 </style>

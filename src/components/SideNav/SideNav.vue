@@ -103,8 +103,8 @@ export default defineComponent({
 .el-aside {
   box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.1);
   background-color: $neutral-color-hight-pure;
-  margin-left: 2px;
   transition: all 0.3s ease;
+  height: auto;
 }
 
 .sidebar-logo {
@@ -157,5 +157,8 @@ export default defineComponent({
     display: inline-block;
     font-size: 0.875rem;
   }
+}
+.el-scrollbar__view {
+  position: fixed;
 }
 </style>
