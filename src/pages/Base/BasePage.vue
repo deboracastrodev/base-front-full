@@ -4,11 +4,13 @@
     <div class="v-body">
       <div>
         <top-nav v-model="isCollapse"></top-nav>
-        <div class="v-main-content">
-          <slot>
-            <router-view />
-          </slot>
-        </div>
+        <el-scrollbar max-height="calc(100vh - 60px - 60px)">
+          <div class="v-main-content">
+            <slot>
+              <router-view />
+            </slot>
+          </div>
+        </el-scrollbar>
       </div>
       <v-footer />
     </div>
@@ -78,8 +80,6 @@ export default defineComponent({
   flex-direction: column;
 }
 .v-main-content {
-  position: relative;
-  margin-top: 60px;
   padding: 2rem;
 }
 </style>

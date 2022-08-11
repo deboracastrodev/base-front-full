@@ -64,7 +64,6 @@ export default defineComponent({
   height: 60px;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
   background-color: #fff;
-  position: fixed;
   width: 100%;
   padding: 0 1rem;
   display: flex;

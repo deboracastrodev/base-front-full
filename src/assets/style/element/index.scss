@@ -45,6 +45,14 @@
     'large': 20px,
     'default': 24px,
     'small': 15px
+  ),
+  $menu: (
+    'base-level-padding': 1rem,
+    'item-height': 2.875rem,
+    'icon-width': 14px,
+    'border-color': rgba(255, 255, 255, 0),
+    'bg-color': rgba(255, 255, 255, 0),
+    'text-color': variables.$neutral-color-low-medium
   )
 );
 
