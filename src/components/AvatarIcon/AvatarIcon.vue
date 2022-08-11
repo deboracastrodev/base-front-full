@@ -1,25 +1,22 @@
 <template>
-  <a href="#" class="v-avatar" :class="setSizeClass" @click.prevent="$emit('click')">
-    <div class="user">
-      <span class="user__initial_letters">
-        {{ initialLetter }}
-      </span>
-    </div>
-
-    <span v-if="fullName" class="v-tooltip v-tooltip--top">
-      <span class="v-tooltip__text">{{ fullName }}</span>
-      <span class="v-tooltip__arrow"></span>
-    </span>
-  </a>
+  <el-tooltip :content="fullName" show-after="500">
+    <a href="#" class="v-avatar" :class="setSizeClass" @click.prevent="$emit('click')">
+      <div class="user">
+        <span class="user__initial_letters">
+          {{ initialLetter }}
+        </span>
+      </div>
+    </a>
+  </el-tooltip>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export enum EAvatarSize {
-  'small' = 'v-avatar--sm',
-  'medium' = 'v-avatar--md',
-  'large' = 'v-avatar--lg'
+  small = 'v-avatar--sm',
+  medium = 'v-avatar--md',
+  large = 'v-avatar--lg'
 }
 
 export default defineComponent({
@@ -34,7 +31,7 @@ export default defineComponent({
   },
   computed: {
     setSizeClass(): string {
-      return String(EAvatarSize.medium);
+      return EAvatarSize[this.size];
     }
   }
 });
@@ -49,7 +46,6 @@ export default defineComponent({
   max-height: $size;
   border-radius: 50%;
   background-color: $neutral-color-low-medium;
-
   @if $size <=35 {
     border: 4px solid $neutral-color-hight-light;
   } @else {
@@ -59,7 +55,6 @@ export default defineComponent({
   .user {
     width: 100%;
     height: 100%;
-
     &__img {
       width: 100%;
       height: 100%;
@@ -70,10 +65,13 @@ export default defineComponent({
 
     &__initial_letters {
       font-weight: 600;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-transform: uppercase;
       color: var(--el-bg-color);
       width: 100%;
+      height: $size;
 
       @if $size <=38 {
         font-size: 0.75rem;
@@ -88,7 +86,7 @@ export default defineComponent({
 //----------------------------------------
 .v-avatar {
   position: relative;
-
+  text-decoration: none;
   // reponsavel pelo show e hiddem do tooltip
   .v-tooltip {
     display: none;

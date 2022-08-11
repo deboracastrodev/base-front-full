@@ -13,8 +13,8 @@ export default defineComponent({
     size: { type: String, default: 'medium' }
   },
   setup() {
-    const fullName = ref('John Doe');
-    const initialLetter = ref('JD');
+    const fullName = ref('Nome Sobrenome');
+    const initialLetter = ref('NS');
     const avatar = ref('');
 
     return {
