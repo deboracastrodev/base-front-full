@@ -69,8 +69,6 @@ export default defineComponent({
 
 #app > .el-container {
   min-height: 100vh;
-  // &--slot {
-  // }
 }
 
 .v-body {

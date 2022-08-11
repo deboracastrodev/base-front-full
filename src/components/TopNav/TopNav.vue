@@ -41,8 +41,6 @@
         </el-tooltip>
       </el-menu-item>
     </el-menu>
-    <!-- <div class="v-tobbar__alside">
-    </div> -->
   </div>
 </template>
 
@@ -130,18 +128,13 @@ export default defineComponent({
   &--apps {
     --el-menu-hover-bg-color: #fff;
     display: flex;
-    li {
-      height: 80px;
-      width: auto;
-      background-color: red;
-      > img {
-        margin: 0.5rem 0;
-        padding: 0.25rem;
-        border-radius: 0.25rem;
-        border: solid 1px $neutral-color-low-light;
-        box-sizing: border-box;
-        @extend %transition-link;
-      }
+    li > img {
+      margin: 0.5rem 0;
+      padding: 0.25rem;
+      border-radius: 0.25rem;
+      border: solid 1px $neutral-color-low-light;
+      box-sizing: border-box;
+      @extend %transition-link;
     }
   }
 }
