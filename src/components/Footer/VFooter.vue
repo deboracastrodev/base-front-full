@@ -12,21 +12,22 @@
 
 <style lang="scss">
 .v-footer {
-  background-color: $bg-color-gray;
+  background-color: $neutral-color-hight-light;
+  font-size: 14px;
   bottom: 0;
   width: 100%;
   height: 3.5rem;
   display: flex;
   align-items: center;
-  z-index: 9;
+  z-index: 1;
   justify-content: space-between;
 
   * {
-    color: $neutral-color-low-medium;
+    color: $neutral-color-low-light;
   }
 
   a {
-    color: $neutral-color-low-medium;
+    color: $neutral-color-low-light;
     text-decoration: none;
 
     &:hover {

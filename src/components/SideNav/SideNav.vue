@@ -73,6 +73,7 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .v-sidenav {
+  z-index: 2;
   height: 500px;
   transition: all 0.3s ease;
   box-shadow: 1px 0 3px 0 #0000001a;

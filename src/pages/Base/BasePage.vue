@@ -72,6 +72,7 @@ export default defineComponent({
 }
 
 .v-body {
+  background-color: $neutral-color-hight-extra-light;
   width: 100%;
   display: flex;
   justify-content: space-between;
