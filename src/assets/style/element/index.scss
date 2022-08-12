@@ -2,7 +2,7 @@
 @use 'sass:math';
 @use 'sass:map';
 
-@use '../base/variables' as variables;
+@use '../variables/' as variables;
 
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: (
@@ -13,7 +13,7 @@
       'base': variables.$feedback-color-success-pure
     ),
     'warning': (
-      'base': variables.$feedback-color-wargning-pure
+      'base': variables.$feedback-color-warning-pure
     ),
     'danger': (
       'base': variables.$feedback-color-helper-pure
@@ -45,6 +45,15 @@
     'large': 20px,
     'default': 24px,
     'small': 15px
+  ),
+  $menu: (
+    'base-level-padding': 1rem,
+    'item-height': 2.875rem,
+    'icon-width': 14px,
+    'border-color': rgba(255, 255, 255, 0),
+    'bg-color': rgba(255, 255, 255, 0),
+    'text-color': variables.$neutral-color-low-medium,
+    'horizontal-sub-item-height': auto,
   )
 );
 

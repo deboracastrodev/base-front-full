@@ -1,42 +1,33 @@
 <template>
   <el-aside class="v-sidenav" :class="isCollapse ? 'v-sidenav--collapse' : 'v-sidenav--default'">
     <el-scrollbar class="v-scrollbar-side-nav">
-      <div class="sidebar-logo">
+      <div class="v-sidenav--logo">
         <a href="/">
-          <img src="@/assets/images/logo.svg" class="image-logo" v-if="isCollapse" />
-          <img src="@/assets/images/logo.png" class="image-logo" v-else />
+          <img src="@/assets/images/logo.svg" v-if="isCollapse" />
+          <img src="@/assets/images/logo.png" v-else />
         </a>
       </div>
-      <div class="sidebar-menu">
-        <el-menu class="el-menu-vertical" :collapse="isCollapse">
-          <el-menu-item index="1">
-            <el-icon>
-              <SvgIcon type="mdi" :path="mdiHome" :size="15"></SvgIcon>
-            </el-icon>
-            <template #title>
-              <router-link class="router-link" :to="{ name: 'Home' }">Home</router-link>
-            </template>
-          </el-menu-item>
-          <el-menu-item index="2">
-            <el-icon>
-              <SvgIcon type="mdi" :path="mdiCashMultiple" :size="15"></SvgIcon>
-            </el-icon>
-            <template #title>
-              <router-link class="router-link" :to="{ name: 'Link2' }">Link 2</router-link>
-            </template>
-          </el-menu-item>
-          <el-menu-item index="3">
-            <router-link class="router-link" :to="{ name: 'Link3' }">
-              <el-icon>
-                <SvgIcon type="mdi" :path="mdiViewDashboardOutline" :size="15"></SvgIcon>
-              </el-icon>
-            </router-link>
-            <template #title>
-              <router-link class="router-link" :to="{ name: 'Link3' }">Link 3</router-link>
-            </template>
-          </el-menu-item>
-        </el-menu>
-      </div>
+
+      <el-menu class="el-menu-vertical v-sidenav--items" :router="true" :collapse="isCollapse">
+        <el-menu-item index="#home">
+          <el-icon>
+            <SvgIcon type="mdi" :path="mdiHome" :size="15"></SvgIcon>
+          </el-icon>
+          <template #title> Home </template>
+        </el-menu-item>
+        <el-menu-item index="#link-2">
+          <el-icon>
+            <SvgIcon type="mdi" :path="mdiCashMultiple" :size="15"></SvgIcon>
+          </el-icon>
+          <template #title>Link 2</template>
+        </el-menu-item>
+        <el-menu-item index="#link-3">
+          <el-icon>
+            <SvgIcon type="mdi" :path="mdiViewDashboardOutline" :size="15"></SvgIcon>
+          </el-icon>
+          <template #title> Link 3 </template>
+        </el-menu-item>
+      </el-menu>
     </el-scrollbar>
   </el-aside>
 </template>
@@ -81,16 +72,13 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-@mixin respond-to($breakpoint) {
-  @media (min-width: ($breakpoint)) {
-    @content;
-  }
-}
-
 .v-sidenav {
   height: 500px;
   transition: all 0.3s ease;
-  box-shadow: 1px 0 3px #000001;
+  box-shadow: 1px 0 3px 0 #0000001a;
+  background-color: $neutral-color-hight-pure;
+  transition: all 0.3s ease;
+  height: auto;
 
   &--collapse {
     max-width: calc(var(--el-menu-icon-width) + var(--el-menu-base-level-padding) * 2);
@@ -99,63 +87,45 @@ export default defineComponent({
   &--default {
     max-width: 13rem;
   }
-}
-.el-aside {
-  box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.1);
-  background-color: $neutral-color-hight-pure;
-  margin-left: 2px;
-  transition: all 0.3s ease;
-}
-
-.sidebar-logo {
-  height: 1.5rem;
-  width: auto;
-  transition: all 0.3s ease;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.image-logo {
-  vertical-align: middle;
-  height: 1.5rem;
-  width: auto;
-  max-width: 13rem;
-}
-
-.sidebar-menu {
-  display: block;
-}
-.el-menu-vertical {
-  border-right: none !important;
-}
-
-.router-link {
-  text-decoration: none;
-  color: $text-color-nonfocus;
-
-  @include respond-to('medium') {
-    padding-left: 10px;
-    padding-right: 1rem;
-  }
-
-  * {
-    color: $text-color-nonfocus;
+  &--logo {
+    height: 3.75rem;
+    box-sizing: border-box;
+    width: auto;
     transition: all 0.3s ease;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    > a > img {
+      vertical-align: middle;
+      height: 1.5rem;
+      width: auto;
+      max-width: 13rem;
+    }
   }
-
-  &__icon {
-    font-size: 0.875rem;
-    width: 1rem;
-    display: inline-block;
-  }
-
-  &__text {
-    padding: 2px 0 0 10px;
-    display: inline-block;
-    font-size: 0.875rem;
+  & &--items {
+    border-right: solid 0px transparent;
+    > li {
+      &:hover {
+        color: var(--el-menu-active-color);
+      }
+      &.is-active {
+        background-color: var(--el-menu-hover-bg-color);
+      }
+      &:hover::before,
+      &.is-active::before {
+        background-color: var(--el-menu-active-color);
+        position: absolute;
+        height: 100%;
+        width: 4px;
+        display: block;
+        left: 0;
+        content: '';
+      }
+      > i {
+        margin-right: 0.75rem;
+      }
+    }
   }
 }
 </style>

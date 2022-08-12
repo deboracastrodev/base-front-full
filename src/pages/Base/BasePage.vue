@@ -1,22 +1,21 @@
 <template>
-  <div class="v-basepage">
-    <el-container>
-      <side-nav :isCollapse="isCollapse"></side-nav>
-      <el-container>
-        <el-header>
-          <top-nav v-model="isCollapse"></top-nav>
-        </el-header>
-        <el-main>
-          <slot>
-            <router-view />
-          </slot>
-        </el-main>
-        <el-footer>
-          <v-footer />
-        </el-footer>
-      </el-container>
-    </el-container>
-  </div>
+  <el-container>
+    <side-nav :isCollapse="isCollapse"></side-nav>
+    <div class="v-body">
+      <div>
+        <top-nav v-model="isCollapse"></top-nav>
+        <el-scrollbar max-height="calc(100vh - 60px - 60px)">
+          <div class="v-main-content">
+            <slot>
+              <router-view />
+            </slot>
+          </div>
+        </el-scrollbar>
+      </div>
+      <v-footer />
+    </div>
+  </el-container>
+  <div class="v-basepage"></div>
 </template>
 
 <script lang="ts">
@@ -66,5 +65,19 @@ export default defineComponent({
 
 .el-header {
   padding: 0 0 0 0;
+}
+
+#app > .el-container {
+  min-height: 100vh;
+}
+
+.v-body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.v-main-content {
+  padding: 2rem;
 }
 </style>
