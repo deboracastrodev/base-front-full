@@ -1,20 +1,14 @@
 <template>
-  <div class="v-tobbar">
+  <div class="v-topbar">
     <el-tooltip content="Menu" show-after="500">
-      <SvgIcon
-        @click="openSidebar"
-        class="v-tobbar--icon"
-        type="mdi"
-        :path="mdiMenu"
-        :size="24"
-      ></SvgIcon>
+      <SvgIcon @click="openSidebar" class="v-topbar--icon" type="mdi" :path="mdiMenu" :size="24"></SvgIcon>
     </el-tooltip>
-    <el-menu mode="horizontal" class="v-tobbar--items" :router="true" :ellipsis="false">
+    <el-menu mode="horizontal" class="v-topbar--items" :router="true" :ellipsis="false">
       <el-sub-menu>
         <template #title>
-          <SvgIcon class="v-tobbar--icon" type="mdi" :path="mdiApps" :size="24"></SvgIcon>
+          <SvgIcon class="v-topbar--icon" type="mdi" :path="mdiApps" :size="24"></SvgIcon>
         </template>
-        <div class="v-tobbar--apps">
+        <div class="v-topbar--apps">
           <el-tooltip content="Link1" show-after="500">
             <el-menu-item index="#link1">
               <img src="https://picsum.photos/seed/picsum/60/60" alt="" />
@@ -37,7 +31,7 @@
       </el-menu-item>
       <el-menu-item index="#logout">
         <el-tooltip content="Deslogar" show-after="500">
-          <SvgIcon class="v-tobbar--icon" type="mdi" :path="mdiLogoutVariant" :size="24"></SvgIcon>
+          <SvgIcon class="v-topbar--icon" type="mdi" :path="mdiLogoutVariant" :size="24"></SvgIcon>
         </el-tooltip>
       </el-menu-item>
     </el-menu>
@@ -54,7 +48,8 @@ export default defineComponent({
   components: { MyAvatarIcon },
   data() {
     return {
-      textTooltip: 'teste'
+      textTooltip: 'teste',
+      boxAppsVisible: false
     };
   },
   props: {
@@ -85,12 +80,6 @@ export default defineComponent({
     };
   },
 
-  data() {
-    return {
-      boxAppsVisible: false
-    };
-  },
-
   methods: {
     handleActionsApps() {
       this.boxAppsVisible = !this.boxAppsVisible;
@@ -99,7 +88,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-.v-tobbar {
+.v-topbar {
   --el-menu-hover-bg-color: #fff;
   --el-menu-active-color: #fff;
   --el-menu-horizontal-sub-item-height: 80px;
@@ -114,21 +103,26 @@ export default defineComponent({
   justify-content: space-between;
   top: 0;
   box-sizing: border-box;
+
   &--icon {
     @extend %transition-link;
     color: $neutral-color-low-light;
     cursor: pointer;
   }
+
   &--items {
     align-items: center;
+
     .el-icon.el-sub-menu__icon-arrow {
       display: none;
     }
   }
+
   &--apps {
     --el-menu-hover-bg-color: #fff;
     display: flex;
-    li > img {
+
+    li>img {
       margin: 0.5rem 0;
       padding: 0.25rem;
       border-radius: 0.25rem;

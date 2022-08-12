@@ -6,7 +6,6 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('../pages/Base/BasePage.vue'),
-      props: (route) => ({ query: route.query }),
       children: [
         {
           path: '',
