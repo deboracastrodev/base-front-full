@@ -3,7 +3,6 @@
   <div style="width: 50%; padding-top: 50px">
     <h4>Componente tabela importando da lib vert-frame-core</h4>
     <label>Essa lib foi criada inspirada no design system da VERT</label>
-    <v-table :rows="rows" :cols="cols" style="padding-top: 20px"> </v-table>
   </div>
   <br />
   <div class="d-flex">
